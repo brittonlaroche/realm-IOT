@@ -18,12 +18,11 @@ while True:
         # print("temperature:" +str(temperature))
         # print("humidity:" + str(humidity))
         ftemp = (temperature * 9/5)+32
-        data = "{sensorId:\"T89176\", temperature:" +str(ftemp) +", humidity:" + str(humidity) +"}"
+        data = "{\"sensorId\":\"T89176\", \"temperature\":" +str(ftemp) +", \"humidity\":" + str(humidity) +"}"
         print(data)
-        headers = {
-            'Content-type': 'application/json',
-        }
-        response = requests.post('https://webhooks.mongodb-realm.com/api/client/v2.0/app/inventory-hhsot/service/Receive-IOT-Data/incoming_webhook/IOT-WH', headers=headers, data=data)
+        url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/inventory-hhsot/service/Receive-IOT-Data/incoming_webhook/IOT-WH'
+        headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+        response = requests.post(url, data=data, headers=headers )
         for x in response:
             print(x)
 
