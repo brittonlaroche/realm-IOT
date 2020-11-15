@@ -13,9 +13,6 @@ DHT_PIN = 4
 while True:
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     if humidity is not None and temperature is not None:
-        # print("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, humidity))
-        # print("temperature:" +str(temperature))
-        # print("humidity:" + str(humidity))
         sensorDate = datetime.datetime.now()
         ftemp = (temperature * 9/5)+32
         data = "{\"sensorId\":\"T89176\", \"temperature\":" +str(ftemp) +", \"humidity\":" + str(humidity) +", \"sensorDate\":\"" + str(sensorDate) + "\"}"
