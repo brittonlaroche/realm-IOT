@@ -55,6 +55,12 @@ We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry
 |-------------------------|
 |<img src="./img/DHT11Wiring.png">|
 
+We are not going to use the bread board.  Instead we will wire the DHT11 sensor directly to the Raspbery Pi GPIO board using the female to female conector wires we took from the ELEGOO UNO Project Super Starter Kit as seen below:
+
+|Pi with Cana Kit Open | Pi with Cana Kit Closed|
+|----------------------|------------------------|
+|<img src="./img/PIKitOpen.jpg">|<img src="./img/PIKitClosed.jpg">|
+
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
 
