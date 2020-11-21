@@ -21,19 +21,22 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 
 ### Configure the IOT Hardware
 
-#### <img src="./img/1.svg" width="64px"> Rasperry Pi Cana Kit Installation Guide
+#### <img src="./img/1.svg" width="48px"> Rasperry Pi Cana Kit Installation Guide
 When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates. I found that the rasbian operating system was pre-installed on the sd card and all I had to do was insert the card and perform an update. Watch the video below for step by step instructions.     
 [Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)   
 [Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)   
    
-#### Wiring the DHT11 Sensor to the Raspberry Pi
+#### <img src="./img/2.svg" width="48px"> Wiring the DHT11 Sensor to the Raspberry Pi
 The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video:   
 [DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
 
+#### <img src="./img/3.svg" width="48px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
 
 
-## First Version
+## Send IOT Data to Atlas
+
+### First Version
 
 Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call.
 
