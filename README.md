@@ -26,7 +26,7 @@ When you first get the cana kit and the Raspbery Pi you will want to set it up. 
 |Getting STarted Video|Getting Started Blog & Video|
 |--------------|---------------|
 |[Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)|[Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)|
-|<a href="https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be" target="video"><img src="./img/CTVideo.png></a>|<a href="https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/" target="blog"><img src="./img/CTBlog.png></a>|
+|<a href="https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be" target="video"><img src="./img/CTVideo.png"></a>|<a href="https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/" target="blog"><img src="./img/CTBlog.png"></a>|
 
    
 #### <img src="./img/2.svg" width="32px"> Wiring the DHT11 Sensor to the Raspberry Pi
