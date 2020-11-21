@@ -59,7 +59,7 @@ We are not going to use the bread board.  Instead we will wire the DHT11 sensor 
 
 |Pi with Cana Kit Open | Pi with Cana Kit Closed|
 |----------------------|------------------------|
-|<img src="./img/PIKitOpen.jpg">|<img src="./img/PIKitLid.jpg">|
+|<a href="./img/PIKitOpenLarge.jpg" target="large"><img src="./img/PIKitOpen.jpg"></a>|<img src="./img/PIKitLid.jpg">|
 
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
