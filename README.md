@@ -76,6 +76,18 @@ The exact wiring for my particluar set up allowed me to include the Cana kit fan
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
 
+PYTHON CODE FOR RASPBERRY PI DHT11/DHT22
+Next thing we need to do is install the DHT python library. This is done by entering  the following command:
+```
+sudo pip3 install Adafruit_DHT
+```
+Note: If you run into problems with the above command, you may not have PIP installed on your Pi.  You can fix that by running the following commands.  These will install PIP and other utilities you may need.
+   
+```
+sudo apt-get install python3-dev python3-pip
+sudo python3 -m pip install --upgrade pip setuptools wheel
+```
+
 
 ## Send IOT Data to Atlas
 
