@@ -19,8 +19,8 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 |[Raspbery Pi with Cana Kit](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/) | [ELEGOO UNO Project Super Starter Kit](https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/)|
 | <a href="https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/" target="pi"><img src="./img/CanaKit.png" width="400px"></a>|<a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/" target="pi"><img src="./img/UnoR3.png" width="400px"></a>|
 
-### Installation Guides
-When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates.  Watch the video below for step by step instructions.
+### Raspbery Pi Installation Guides
+When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates.  Watch the video below for step by step instructions.  I found that the rasbian operating system was pre-installed on the sd card and all I had to do was insert the card and perform an update.   
 [Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)
 
 
