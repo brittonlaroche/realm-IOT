@@ -33,6 +33,14 @@ When you first get the cana kit and the Raspbery Pi you will want to set it up. 
 The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video:   
 [DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
 
+We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry Pi.  To get a listing of your specific Rasperry pi and its GPIO pin configuration you can type "pinout" from the pi terminal.  You will get a map like the following:
+
+|PI Board|GPIO Pins|
+|-------------|------------------|
+|<img src="./img/PIBoard.png>|<img src="./img/GPIOPins.png>|
+
+
+
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
 
