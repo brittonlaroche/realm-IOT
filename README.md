@@ -37,7 +37,7 @@ We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry
 
 |PI Board|GPIO Pins|
 |-------------|------------------|
-|<img src="./img/PIBoard.png>|<img src="./img/GPIOPins.png>|
+|<img src="./img/PIBoard.png">|<img src="./img/GPIOPins.png">|
 
 
 
