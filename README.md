@@ -7,7 +7,7 @@ MongoDB Realm sync is a poewerful tool that has now been brought to the world of
 ## Hands On Lab
 In this "hands on lab" we will create our own full featured IOT sensor device that will send data from a remote IOT device to MongoDB Atlas. After setting up our Raspberry pi and wiring inthe DHT 11 Sensor. We will begin with a simple python script that sends data directly to MongoDB via a REST API webhook.  We will then enhance this simple code to retry sending its data in the event of a network outage. Finally we will upgrade our simple script to talk to an MQTT Broker which will send data to the Realm Middleware which will guarantee delivery and bi-directional communication with MongoDB Atlas. The MQTT broker and Realm Middleware opens a whole new world of possibilities where configuration changes and upgrades can be passed down to remote IOT devices rather than a one way sending of sensor data from the IOT device.   
    
-![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
+![Realm IOT MQTT](./img/RealmIOTMqttMobile.png) 
 
 ## Getting Started
 
