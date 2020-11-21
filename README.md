@@ -37,7 +37,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 It will take serveral minutes to apply all the updates.
    
 #### <img src="./img/2.svg" width="32px"> Wiring the DHT11 Sensor to the Raspberry Pi
-Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sesnor and take 3 female to female wiring connections. 
+Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sensor and take 3 female to female wiring connections. 
 |DHT11 Temperature and humidity Sensor|
 |-------------------------------------|
 |<img src="./img/DHT11-Sensor.jpg">|
