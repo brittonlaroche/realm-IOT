@@ -27,6 +27,8 @@ When you first get the cana kit and the Raspbery Pi you will want to set it up. 
 [Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)   
    
 #### Wiring the DHT11 Sensor to the Raspberry Pi
+The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video: 
+[DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be)
 
 
 
