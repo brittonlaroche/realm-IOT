@@ -95,6 +95,7 @@ sudo python3 -m pip install --upgrade pip setuptools wheel
 
 Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call.
 
+![Realm IOT](./img/RealmIOT.png) 
 
 ```py
 import Adafruit_DHT
@@ -143,7 +144,7 @@ print("wifi back up")
 ```   
    
 
-![Realm IOT MQTT](./img/RealmIOT.png) 
+
 
 ## Second Version
 A second version of this code that handles errors and has built in retry logic is here.  It also batches the data.  If the sensor data is collected every 3 seconds then with a batch of 20 you can send data once a minute and still maintain the granualarity of each 3 second reading.   
