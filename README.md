@@ -12,7 +12,7 @@ In this "hands on lab" we will create our own full featured IOT sensor device th
 ## Getting Started
 
 ### Equipment
-You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiring.  For a little extra you can get a whole kit with multiple sensors a bread borad and all the wiring you will need with the purchase of an Elegoo UNO R3 Starter Kit.  I selected the Pi 4 with 4GB and this githib has instructions for the Pi 4 with this configuration.  The details are in the Amazon links provided in the table below.
+You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiring.  For a little extra you can get a whole kit with multiple sensors a bread board and all the wiring you will need with the purchase of an Elegoo UNO R3 Starter Kit.  I selected the Pi 4 with 4GB, this githib has instructions for the Pi 4 with this configuration.  The details are in the Amazon links provided in the table below.
 
 | Raspberry Pi Cana Kit | Elegoo UNO Starter Kit |
 |-----------------------|------------------------|
@@ -20,7 +20,8 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 | <a href="https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/" target="pi"><img src="./img/CanaKit.png" width="400px"></a>|<a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/" target="pi"><img src="./img/UnoR3.png" width="400px"></a>|
 
 ### Installation Guides
-
+When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates.  Watch the video below for step by step instructions.
+[Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)
 
 
 ## First Version
