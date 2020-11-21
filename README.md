@@ -36,8 +36,7 @@ Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 ses
 |<img src="./img/DHT11-Sensor.jpg">|
 
 
-The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video:   
-[DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
+The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video: [DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
 
 We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry Pi.  To get a listing of your specific Rasperry pi and its GPIO pin configuration you can type "pinout" from the pi terminal.  You will get a beatifully colored ASCII art map like the following:
 
@@ -45,7 +44,9 @@ We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry
 |-------------|------------------|
 |<img src="./img/PIBoard.png">|<img src="./img/GPIOPins.png">|
 
-
+|DHT11 GPIO Wiring Diagram|
+|-------------------------|
+|<img src="./img/DHT11Wiring.png">|
 
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
