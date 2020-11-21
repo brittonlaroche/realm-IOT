@@ -63,11 +63,13 @@ We are not going to use the bread board.  Instead we will wire the DHT11 sensor 
 
 The exact wiring for my particluar set up allowed me to include the Cana kit fan.  My wiring is as follows:
 |DHT11 Pin| Wire Color|Raspberry Pi GPIO Pin| Pin Number|
+|---------|---------|---------|---------|
 |[Left] Data Pin| Orange| GPIO4 | (7)|
 |[Middle] Power| Red | --- |(2)|
 |[Right] Ground| Brown| --- |(9)|
 
 |Cana Kit Fan| Wire Color|Raspberry Pi GPIO Pin| Pin Number|
+|---------|---------|---------|---------|
 |Power Wire | Red| --- | (4)|
 |Ground Wire| Black| --- |(6)|
 
