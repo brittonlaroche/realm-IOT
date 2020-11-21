@@ -28,6 +28,13 @@ When you first get the cana kit and the Raspbery Pi you will want to set it up. 
 |[Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)|[Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)|
 |<a href="https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be" target="video"><img src="./img/CTVideo.png"></a>|<a href="https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/" target="blog"><img src="./img/CTBlog.png"></a>|
 
+After assempling the Raspberry Pi cana Kit, insert the SD card, lug in a monitor, mouse and keyboard and power it on.  Once inside the rasbian operating system oepn the terminal window and run the following command   
+   
+```   
+sudo apt-get update && sudo apt-get upgrade -y
+```   
+
+It will take serveral minutes to apply all the updates.
    
 #### <img src="./img/2.svg" width="32px"> Wiring the DHT11 Sensor to the Raspberry Pi
 Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sesnor and take 3 female to female wiring connections. 
