@@ -3,13 +3,17 @@
 
 ## Overview
 
-In this "hands on lab" we will create our own full featured IOT sensor device that will send data from a remote IOT device to MongoDB Atlas.  We will begin with a simple script that sends data directly to MongoDb via a REST API webhook.  We will then enhance this simple code to retry sending its data in the event of a network outage. Finally we will upgrade our simple script to talk to an MQTT Broker which will send data to the Realm Middleware which will guarantee delivery and bi-directional communication with MongoDB Atlas. The MQTT broker and Realm Middleware opens a whole new world of possibilities where configuration changes and upgrades can be passed down to remote IOT devices rather than a one way sending of sesnor data from the IOT device.   
+In this "hands on lab" we will create our own full featured IOT sensor device that will send data from a remote IOT device to MongoDB Atlas.  We will begin with a simple script that sends data directly to MongoDb via a REST API webhook.  We will then enhance this simple code to retry sending its data in the event of a network outage. Finally we will upgrade our simple script to talk to an MQTT Broker which will send data to the Realm Middleware which will guarantee delivery and bi-directional communication with MongoDB Atlas. The MQTT broker and Realm Middleware opens a whole new world of possibilities where configuration changes and upgrades can be passed down to remote IOT devices rather than a one way sending of sensor data from the IOT device.   
    
 ![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
 
 
 
 ## First Version
+
+Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call.
+
+
 ```py
 import Adafruit_DHT
 import time
@@ -60,110 +64,12 @@ print("wifi back up")
 ![Realm IOT MQTT](./img/RealmIOT.png) 
 
 ## Second Version
+A second version of this code that handles errors and has built in retry logic is here.  It also batches the data.  If the sensor data is collected every 3 seconds then with a batch of 20 you can send data once a minute and still maintain the granualarity of each 3 second reading.   
 
-```py
-import Adafruit_DHT
-import time
-import requests
-import datetime
-DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 4
-BATCH_LIST = []
-RETRY_LIST = []
-BATCH_SIZE = 5
-RETRY_LIMIT = 2
+You can access the second version of the code here.
+https://github.com/brittonlaroche/realm-IOT/blob/main/python/readTempBatch.py
 
-def transmitData(inBatchList):
-    batchLen = len(inBatchList)
-    numRetrys = 0
-    listNum = 0
-    sResponse = ""
-    response = ""
-    batchData = ""
-    url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/inventory-hhsot/service/Receive-IOT-Data/incoming_webhook/IOT-WH'
-    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
-    while listNum < BATCH_SIZE and listNum < len(inBatchList):
-        if listNum == 0:
-            batchData = batchData + inBatchList[listNum]
-        else:
-            batchData = batchData + "," + inBatchList[listNum]
-        listNum += 1
-    insertData = "[" + batchData + "]"
-    while numRetrys < RETRY_LIMIT and sResponse != "<Response [200]>":
-        try:
-            response = requests.post(url, data=insertData, headers=headers )
-            print(response)
-            #for x in response:
-            #    print(x)
-        except:
-            response = "E"
-            print("Error transmitting sensor data")
-        sResponse = str(response)
-        numRetrys += 1
-        time.sleep(1)
-    return sResponse
-
-def addToRetryList(inBatchList, inRetryList):
-    batchLen = len(inBatchList)
-    listNum = 0
-    while listNum < batchLen:
-        listItem = str(inBatchList[listNum])
-        RETRY_LIST.append(listItem)
-        listNum += 1
-    return inRetryList
-
-def reTransmitData(inRetryList):
-    while len(inRetryList) > 0:
-        listNum = 0
-        newBatchList =[]
-        while listNum < BATCH_SIZE and listNum < len(inRetryList):
-            newBatchList.append(inRetryList[listNum])
-            listNum += 1
-        print("Resending data that failed earlier transmission with a batch of " + str(BATCH_SIZE))
-        sResponse = transmitData(newBatchList)
-        if sResponse == "<Response [200]>":
-            # We succesfully retransmitted the data
-            # Remove the succesful transmissions from the RETRY list
-            delNum = 0
-            while delNum < BATCH_SIZE and delNum < len(inRetryList):
-                del inRetryList[0]
-                delNum += 1
-            #print("reTransmitData After Reseting list")
-            #printRetryList(inRetryList)
-        else:
-            #we are having connectivity issues, try again later
-            return inRetryList
-
-def printRetryList(inRetryList):
-    print("Retry List:")
-    i = 0
-    for x in inRetryList:
-        print( str(i) + ": " + x)
-        i += 1
-                
-while True:
-    humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
-    if humidity is not None and temperature is not None:
-        sensorDate = datetime.datetime.now()
-        ftemp = (temperature * 9/5)+32
-        data = "{\"sensorId\":\"T89176\", \"temperature\":" +str(ftemp) +", \"humidity\":" + str(humidity) +", \"sensorDate\":\"" + str(sensorDate) + "\"}"
-        print(data)
-        BATCH_LIST.append(data)
-        if len(BATCH_LIST) >= BATCH_SIZE:
-            sResponse = transmitData(BATCH_LIST)
-            if sResponse == "<Response [200]>":
-                BATCH_LIST = []
-            else:
-                print("Error Transmitting data")
-                RETRY_LIST = addToRetryList(BATCH_LIST, RETRY_LIST)
-                BATCH_LIST = []
-        if RETRY_LIST is not None and len(RETRY_LIST) > 0:
-            RETRY_LIST = reTransmitData(RETRY_LIST)
-    else:
-        print("Sensor failure. Check wiring.")
-    time.sleep(3)
-
-``` 
+You can also run the wifi outage script and see that it will store and retry the data.  This is all well and good.  But it is severly lacking as it is only one way communication.  Imagine trying to change the configuration.  Maybe you have an upgrade or maybe you want to save money and batch the data so it sends once every five minutes.  Perhaps you want the sensor to only read once a minute.  How will you apply these changes?  Imagine going to thousands of devices to make the necessary upgrades. This solution is untenable in the long run and will quickly become a maintenance nightmare. Enter the next phase of our lab.  We will now enable an MQTT broker and the Realm Sync capabilities.
 
 ## Realm IOT MQTT
 ![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
