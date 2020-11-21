@@ -30,6 +30,12 @@ When you first get the cana kit and the Raspbery Pi you will want to set it up. 
 
    
 #### <img src="./img/2.svg" width="32px"> Wiring the DHT11 Sensor to the Raspberry Pi
+Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sesnor and take 3 female to female wiring connections. 
+|DHT11 Temperature and humidity Sensor|
+|-------------------------------------|
+|<img src="./img/DHT11-Sensor.jpg">|
+
+
 The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video:   
 [DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
 
