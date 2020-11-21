@@ -61,6 +61,16 @@ We are not going to use the bread board.  Instead we will wire the DHT11 sensor 
 |----------------------|------------------------|
 |<a href="./img/PIKitOpenLarge.jpg" target="large"><img src="./img/PIKitOpen.jpg"></a>|<img src="./img/PIKitLid.jpg">|
 
+The exact wiring for my particluar set up allowed me to include the Cana kit fan.  My wiring is as follows:
+|DHT11 Pin| Wire Color|Raspberry Pi GPIO Pin| Pin Number|
+|[Left] Data Pin| Orange| GPIO4 | (7)|
+|[Middle] Power| Red | --- |(2)|
+|[Right] Ground| Brown| --- |(9)|
+
+|Cana Kit Fan| Wire Color|Raspberry Pi GPIO Pin| Pin Number|
+|Power Wire | Red| --- | (4)|
+|Ground Wire| Black| --- |(6)|
+
 #### <img src="./img/3.svg" width="32px"> Write a python script to read sensor data
 I will summarize the following link [DHT11 Coding](https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/) below:
 
