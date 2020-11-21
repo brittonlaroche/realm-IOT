@@ -10,8 +10,8 @@ In this "hands on lab" we will create our own full featured IOT sensor device th
 ## Getting Started
 
 ### Equipment
-[Raspbery Pi with Cana Kit](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/ref=sr_1_3?dchild=1&keywords=Raspberry+Pi+Cana+Kit&qid=1605933239&sr=8-3)
-[Uno R3 Elegoo](https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/)
+[Raspbery Pi with Cana Kit](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/ref=sr_1_3?dchild=1&keywords=Raspberry+Pi+Cana+Kit&qid=1605933239&sr=8-3)   
+[ELEGOO UNO Project Super Starter Kit](https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/)   
 
 ### Installation Guides
 
