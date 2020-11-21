@@ -21,7 +21,7 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 
 ### Configure the IOT Hardware
 
-#### Rasperry Pi Cana Kit Installation Guide
+#### ![1](./img/1.svg) Rasperry Pi Cana Kit Installation Guide
 When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates. I found that the rasbian operating system was pre-installed on the sd card and all I had to do was insert the card and perform an update. Watch the video below for step by step instructions.     
 [Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)   
 [Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)   
