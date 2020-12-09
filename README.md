@@ -156,3 +156,5 @@ You can also run the wifi outage script and see that it will store and retry the
 
 ## Realm IOT MQTT
 ![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
+
+The Realm MQTT framework runs on node.js.  If you are noyt familiar with node.js then I recommedn the following vide to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)
