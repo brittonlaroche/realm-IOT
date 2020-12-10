@@ -44,7 +44,7 @@ def addToRetryList(inBatchList, inRetryList):
     listNum = 0
     while listNum < batchLen:
         listItem = str(inBatchList[listNum])
-        RETRY_LIST.append(listItem)
+        inRetryList.append(listItem)
         listNum += 1
     return inRetryList
 
