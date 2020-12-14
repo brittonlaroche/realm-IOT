@@ -6,7 +6,7 @@ DHT_SENSOR = Adafruit_DHT.DHT11
 DHT_PIN = 4
 BATCH_LIST = []
 RETRY_LIST = []
-BATCH_SIZE = 5
+BATCH_SIZE = 1
 RETRY_LIMIT = 2
 
 def transmitData(inBatchList):
@@ -40,10 +40,13 @@ def transmitData(inBatchList):
     return sResponse
 
 def addToRetryList(inBatchList, inRetryList):
+    #printRetryList(inRetryList);
     batchLen = len(inBatchList)
+    print("batchLen:" + str(batchLen))
     listNum = 0
     while listNum < batchLen:
         listItem = str(inBatchList[listNum])
+        print("listItem: "+ listItem);
         inRetryList.append(listItem)
         listNum += 1
     return inRetryList
@@ -76,7 +79,7 @@ def printRetryList(inRetryList):
     for x in inRetryList:
         print( str(i) + ": " + x)
         i += 1
-                
+
 while True:
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     if humidity is not None and temperature is not None:
