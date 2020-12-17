@@ -177,7 +177,7 @@ Change the new app function to include the app_id of your realm application.
 
 const Realm = require('realm');
 
-exports.app = new Realm.App('your-app-id');
+exports.app = new Realm.App('your-realm-app-id');
 
 exports.loginEmailPassword = async (email, password) => {
   const credentials = Realm.Credentials.emailPassword(email, password);
@@ -188,3 +188,33 @@ exports.loginEmailPassword = async (email, password) => {
 };
 ```   
 
+Now we will do the same to the realm middleware as well, we will replace the 'your-realm-app-id' portion with the realm app you created.  We will update the middleware realm.js file in the following directory:   
+   
+```
+
+```
+
+
+```js
+'use strict'
+
+const Realm = require('realm')
+
+const app = new Realm.App('your-realm-app-id')
+
+exports.app = app
+
+exports.loginEmailPassword = async (email, password) => {
+  const credentials = Realm.Credentials.emailPassword(email, password)
+  try {
+    const user = await app.logIn(credentials)
+    if (user.id !== app.currentUser.id) {
+      throw new Error('Current user invalid')
+    }
+    return user
+  } catch (err) {
+    console.error('Failed to log in', err)
+    return false
+  }
+}
+```
