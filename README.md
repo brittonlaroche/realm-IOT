@@ -217,4 +217,24 @@ exports.loginEmailPassword = async (email, password) => {
     return false
   }
 }
+```   
+   
+Now lets edit the username and password for the email user we created.  There are two ways to set the password, the proper way is to set up environment variables.  In order to create a quick test we can comment out the use of environment variables and hardcode the userename and password in the index.js.     
+   
+```
+~/IOT/sensor/broker/src $ vi index.js
+```
+   
+```js
+const main = async () => {
+/*  const user = await utils.realm.loginEmailPassword(
+    process.env.AEDES_REALM_EMAIL,
+    process.env.AEDES_REALM_PASSWORD
+  );
+*/
+
+const user = await utils.realm.loginEmailPassword(
+    'mqtt@pi.com',
+    'Passw0rd'
+  );
 ```
