@@ -191,7 +191,7 @@ exports.loginEmailPassword = async (email, password) => {
 Now we will do the same to the realm middleware as well, we will replace the 'your-realm-app-id' portion with the realm app you created.  We will update the middleware realm.js file in the following directory:   
    
 ```
-
+~/IOT/sensor/middleware/aedes-emitter-realm $ vi realm.js
 ```
 
 
