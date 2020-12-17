@@ -160,3 +160,30 @@ You can also run the wifi outage script and see that it will store and retry the
 The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)     
    
 A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)
+
+
+Edit the realm.js file under the broker source utils directory.   
+   
+```
+/IOT/sensor/broker/src/utils $ vi realm.js
+```
+
+    
+Change the new app function to include the app_id of your realm application.   
+   
+```js
+'use strict';
+
+const Realm = require('realm');
+
+exports.app = new Realm.App('your-app-id');
+
+exports.loginEmailPassword = async (email, password) => {
+  const credentials = Realm.Credentials.emailPassword(email, password);
+  return this.app.logIn(credentials).catch((error) => {
+    console.log(error);
+    return false;
+  });
+};
+```   
+
