@@ -157,6 +157,8 @@ You can also run the wifi outage script and see that it will store and retry the
 ## Realm IOT MQTT
 ![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
 
+
+### Learning Journey:
 The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)     
    
 A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)   
@@ -167,9 +169,11 @@ If you are not familiar with MQTT here is a great getting started videos:
    
 In our example we are using python libraries to read the sensor data and node.js to run the MQTT Broker and realm Middleware.  The simpliest solution is to create a python MQTT client.  Short video here: [How to Use the Paho Python MQTT Client- (Beginners Guide)](https://youtu.be/QAaXNt0oqSI)
 
-   
+### Install the real MQTT Broker and middleware   
 Note: This section requires the realm mqtt libraries which will be found [here] in the near future.
 
+
+### Configure the broker to connect to your Realm application
 Edit the realm.js file under the broker source utils directory.   
    
 ```
