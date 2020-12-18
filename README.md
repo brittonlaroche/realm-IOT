@@ -161,6 +161,8 @@ The Realm MQTT framework runs on node.js.  If you are not familiar with node.js 
    
 A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)   
    
+If you are not familiar with MQTT here is a great getting started video tutorial: [How to Get Started with MQTT](https://youtu.be/tQmXWNd1pNk)
+   
 Note: This section requires the realm mqtt libraries which will be found [here] in the near future.
 
 Edit the realm.js file under the broker source utils directory.   
@@ -238,3 +240,8 @@ const user = await utils.realm.loginEmailPassword(
     'Passw0rd'
   );
 ```
+
+## Creating a Python MQTT client
+
+
+
