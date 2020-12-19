@@ -252,5 +252,10 @@ const user = await utils.realm.loginEmailPassword(
 
 ## Creating a Python MQTT client
 
+We begin by installing the python libraries for paho-mqtt on the raspberry pi. We do this by running the following from the command line:   
+   
+```
+sudo pip install paho-mqtt
+```
 
 
