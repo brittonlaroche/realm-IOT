@@ -123,7 +123,16 @@ while True:
         print("Sensor failure. Check wiring.");
     time.sleep(3);   
 ```   
-   
+
+if you get the error: "cannot import name 'Beaglebone_Black_Driver' from 'Adafruit_DHT'" then the following instructions will show how to add the proper entry for the DHT settings.
+
+In "/usr/local/lib/python3.7/dist-packages/Adafruit_DHT/platform_detect.py", you can add the followings at line #112 in the elif ladder, so it should workaround the issue. 
+
+```
+elif match.group(1) == 'BCM2711':
+    return 3
+```
+
 It works!  But there are many problems with this code.  There is no error handling, so if the network goes down the code throws an error and stops working on the IOT device.  You have to connect to the IOT device to start again.  Even if there was error handleing there would be data loss for the entire time the network is down.
 
 The network outage can be tested with the following code:   
