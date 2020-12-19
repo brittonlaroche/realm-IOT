@@ -173,9 +173,7 @@ You can also run the wifi outage script and see that it will store and retry the
 | Node.js | MQTT Broker | MQTT Client|
 |---------|-------------|------------|
 |Node videos|MQTT Broker Videos|MQTT Cleint Videos|
-|The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics:    
-[Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4) A full course with RESTful APIs with Node, Express, and MongoDB is here:    
-[The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)| Content | More Content |
+|The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4) A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)| Content | More Content |
 
 
 
