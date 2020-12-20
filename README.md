@@ -167,7 +167,7 @@ You can also run the wifi outage script and see that it will store and retry the
 ![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
 
 
-### Learning Journey:
+### Learning Journey
 
 
 | Node.js | MQTT Broker | MQTT Client|
