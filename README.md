@@ -164,7 +164,7 @@ https://github.com/brittonlaroche/realm-IOT/blob/main/python/readTempBatch.py
 You can also run the wifi outage script and see that it will store and retry the data.  This is all well and good.  But it is severly lacking as it is only one way communication.  Imagine trying to change the configuration.  Maybe you have an upgrade or maybe you want to save money and batch the data so it sends once every five minutes.  Perhaps you want the sensor to only read once a minute.  How will you apply these changes?  Imagine going to thousands of devices to make the necessary upgrades. This solution is untenable in the long run and will quickly become a maintenance nightmare. Enter the next phase of our lab.  We will now enable an MQTT broker and the Realm Sync capabilities.
 
 ## Realm IOT MQTT
-![Realm IOT MQTT](./img/RealmIOTMqtt2.png) 
+![Realm IOT MQTT](./img/RealmIOT-V5.png) 
 
 
 ### Learning Journey
@@ -178,7 +178,7 @@ You can also run the wifi outage script and see that it will store and retry the
 
 
 
-### Install the real MQTT Broker and middleware   
+### Install the Realm MQTT Broker and middleware   
 Note: This section requires the realm mqtt libraries which will be found [here] in the near future.
 
 
