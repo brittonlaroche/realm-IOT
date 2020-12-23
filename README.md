@@ -225,7 +225,7 @@ Navigate back to the realm application directory
 cd [your install directory]/aedes-realm/realm-app-configuration
 ```
    
-Example below (The real API key was not pasted it is an example)   
+Example below (Dont worry, the real API key was not pasted. It is an example)   
    
 ```
 realm-cli login  --api-key=bwpbsexy --private-api-key=c53f6baf-f7b5-41fe-b56f-2ac1ba244b19
