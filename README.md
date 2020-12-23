@@ -179,7 +179,56 @@ You can also run the wifi outage script and see that it will store and retry the
 
 
 ### Install the Realm MQTT Broker and middleware   
-Note: This section requires the realm mqtt libraries which will be found [here] in the near future.
+Note: This section requires the realm mqtt libraries which will be found (https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/)[here] in the near future.
+Perform a gitclone or download the zip file
+
+### Import the realm application with the realm-cli
+https://docs.mongodb.com/realm/deploy/realm-cli-reference#import-an-application
+The link above will show you how to install the realm-cli   
+
+Navigate to the realm application services directory and change the cluster name to your cluster name in the config.json file
+```
+cd [your install directory]/aedes-realm/realm-app-configuration/services/app0
+vi config.json
+
+{
+    "id": "5fc9fb09075d213dc5dc6f14",
+    "name": "app0",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "YOUR_CLUSTER_NAME",
+        "readPreference": "primary",
+        "sync": {
+            "state": "enabled",
+            "database_name": "iot-reference",
+            "partition": {
+                "key": "partitionKey",
+                "type": "string",
+                "permissions": {
+                    "read": true,
+                    "write": true
+                }
+            }
+        },
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}
+```
+
+
+    
+Navigate back to the realm application directory
+```
+cd [your install directory]/aedes-realm/realm-app-configuration
+```
+   
+Example below (The real API key was not pasted it is an example)   
+   
+```
+realm-cli login  --api-key=bwpbsexy --private-api-key=c53f6baf-f7b5-41fe-b56f-2ac1ba244b19
+realm-cli import --app-id=realm-mqtt --path=./ --strategy=replace
+```
 
 
 ### Configure the broker to connect to your Realm application
