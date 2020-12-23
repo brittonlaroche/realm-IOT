@@ -230,6 +230,22 @@ Example below (Dont worry, the real API key was not pasted. It is an example)
 ```
 realm-cli login  --api-key=bwpbsexy --private-api-key=c53f6baf-f7b5-41fe-b56f-2ac1ba244b19
 realm-cli import --app-id=realm-mqtt --path=./ --strategy=replace
+
+Unable to find app with ID: "realm-mqtt": would you like to create a new app? [y/n]: y
+App name [Application-0]: realm-mqtt
+Available Projects:
+RealmDemo - 5f03a788aeb72067f2b7c5cb
+Atlas Project Name or ID [RealmDemo]:
+Location [US-VA]:
+Deployment Model [GLOBAL]:
+New app created: realm-mqtt-icpxf
+Creating draft for app...
+Draft created successfully...
+Importing app...
+Deploying app...
+Deploying app...
+...
+Done.
 ```
 
 
