@@ -281,11 +281,16 @@ The docker build scripts found under each service lets you quickly build the ima
 ```shell
 cd [your install directory]/aedes-realm/broker
 ./docker-build-armv7.sh v0.1.2-armv7
-```
-or
+```   
+   
+or if auto push is not enabled on your system you can manually build and push your files.   
+
 ```shell
 cd [your install directory]/aedes-realm/broker
-docker buildx build -t zencoder76/realm-aedes-broker:$1 . --push --platform linux/arm/v7
+docker buildx build -t wekancode123/realm-aedes-broker --platform linux/arm/v7
+
+docker tag wekancode123/realm-aedes-broker:latest zencoder76/broker
+docker push zencoder76/broker
 ```
 
 
