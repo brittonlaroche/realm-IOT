@@ -196,7 +196,7 @@ Add a non-root user to the Docker group
 sudo usermod -aG docker pi
 ```
 
-### Import the realm application with the realm-cli
+### Import the realm application with the realm-cli on your laptop
 
 Note these realm-cli steps must be perofrmed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
    
@@ -264,6 +264,30 @@ Deploying app...
 Done.
 Successfully imported 'realm-mqtt-icbmx'
 ```
+
+### Build the docker images on your laptop
+Docker's new buildx is used to build the images. The newer versions of docker (19.03+) have buildx bundled together but you may need to enable it to actually build images. This [link](https://docs.docker.com/buildx/working-with-buildx/) shows you how to enable buildx.
+
+The next step is to setup [qemu-user-static](https://github.com/multiarch/qemu-user-static).
+
+```shell
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+```
+
+This lets you build arm images on your system.
+
+The docker build scripts found under each service lets you quickly build the image and push it to Dockerhub. You'll need to login with your Dockerhub credentials before you can push the images. These scripts also take in a tag for the image as an input
+
+```shell
+cd [your install director]/aedes-realm/broker
+./docker-build-armv7.sh v0.1.2-armv7
+```
+or
+```shell
+cd [your install director]/aedes-realm/broker
+docker buildx build -t zencoder76/realm-aedes-broker:$1 . --push --platform linux/arm/v7
+```
+
 
 
 ### Configure the broker to connect to your Realm application
