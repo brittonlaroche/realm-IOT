@@ -17,7 +17,7 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 | Raspberry Pi Cana Kit | Elegoo UNO Starter Kit |  SenseHat |
 |-----------------------|------------------------|-----------|
 |[Raspbery Pi with Cana Kit](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/) | [ELEGOO UNO Project Super Starter Kit](https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/)|[SenseHat](https://www.amazon.com/gp/product/B014HDG74S/)
-| <a href="https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/" target="pi"><img src="./img/CanaKit.png" width="400px"></a>|<a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/" target="pi"><img src="./img/UnoR3.png" width="400px"></a>|<a href="https://www.amazon.com/gp/product/B014HDG74S/" target="pi"><img src="./img/SenseHat.png" width="400px"> 
+| <a href="https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/" target="pi"><img src="./img/CanaKit.png" width="400px"></a>|<a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4/" target="pi"><img src="./img/UnoR3.png" width="400px"></a>|<a href="https://www.amazon.com/gp/product/B014HDG74S/" target="pi"><img src="./img/SenseHat.jpg" width="400px"> 
 
 ### Configure the IOT Hardware
 
