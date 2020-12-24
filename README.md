@@ -279,12 +279,12 @@ This lets you build arm images on your system.
 The docker build scripts found under each service lets you quickly build the image and push it to Dockerhub. You'll need to login with your Dockerhub credentials before you can push the images. These scripts also take in a tag for the image as an input
 
 ```shell
-cd [your install director]/aedes-realm/broker
+cd [your install directory]/aedes-realm/broker
 ./docker-build-armv7.sh v0.1.2-armv7
 ```
 or
 ```shell
-cd [your install director]/aedes-realm/broker
+cd [your install directory]/aedes-realm/broker
 docker buildx build -t zencoder76/realm-aedes-broker:$1 . --push --platform linux/arm/v7
 ```
 
