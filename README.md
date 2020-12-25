@@ -289,6 +289,7 @@ or if auto push is not enabled on your system you can manually build and push yo
 cd [your install directory]/aedes-realm/broker
 docker buildx build -t wekancode123/realm-aedes-broker --platform linux/arm/v7
 
+docker images
 docker tag wekancode123/realm-aedes-broker:latest zencoder76/broker
 docker push zencoder76/broker
 ```
