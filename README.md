@@ -311,6 +311,13 @@ docker tag realm-aedes-updater:latest zencoder76/realm-aedes-updater
 docker push zencoder76/realm-aedes-updater
 ```   
    
+Additionally, you can add a version tag:   
+   
+```shell   
+docker tag realm-aedes-broker:latest zencoder76/realm-aedes-broker:v0.1.0-armv7
+docker push zencoder76/realm-aedes-broker:v0.1.0-armv7
+```   
+   
 If you have the SenseHat build and push the client   
    
 ```shell
