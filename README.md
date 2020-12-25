@@ -283,16 +283,40 @@ cd [your install directory]/aedes-realm/broker
 ./docker-build-armv7.sh v0.1.2-armv7
 ```   
    
-or if auto push is not enabled on your system you can manually build and push your files.   
-
+or if auto push is not enabled on your system you can manually build and push your files.    
+Start with building the realm mqtt broker.   
+    
 ```shell
 cd [your install directory]/aedes-realm/broker
-docker buildx build -t wekancode123/realm-aedes-broker --platform linux/arm/v7
+docker buildx build -t realm-aedes-broker . --platform linux/arm/v7
 
 docker images
-docker tag wekancode123/realm-aedes-broker:latest zencoder76/broker
-docker push zencoder76/broker
+docker tag realm-aedes-broker:latest zencoder76/realm-aedes-broker
+docker push zencoder76/realm-aedes-broker
+```   
+   
+Build and push the updater    
+   
+```shell
+cd [your install directory]/aedes-realm/updater
+docker buildx build -t realm-aedes-updater . --platform linux/arm/v7
+
+docker images
+docker tag realm-aedes-updater:latest zencoder76/realm-aedes-updater
+docker push zencoder76/realm-aedes-updater
+```   
+   
+If you have the SenseHat build and push the client   
+   
+```shell
+cd [your install directory]/aedes-realm/clients/sensehat
+docker buildx build -t realm-aedes-sensehat-client . --platform linux/arm/v7
+
+docker images
+docker tag realm-aedes-sensehat-client:latest zencoder76/realm-aedes-updater
+docker push zencoder76/realm-aedes-sensehat-client
 ```
+   
 
 
 
