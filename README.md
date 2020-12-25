@@ -300,6 +300,13 @@ docker tag realm-aedes-broker:latest zencoder76/realm-aedes-broker
 docker push zencoder76/realm-aedes-broker
 ```   
    
+Additionally, you can add a version tag:   
+   
+```shell   
+docker tag realm-aedes-broker:latest zencoder76/realm-aedes-broker:v0.1.0-armv7
+docker push zencoder76/realm-aedes-broker:v0.1.0-armv7
+```   
+    
 Build and push the updater    
    
 ```shell
@@ -307,16 +314,12 @@ cd [your install directory]/aedes-realm/updater
 docker buildx build -t realm-aedes-updater . --platform linux/arm/v7
 
 docker images
-docker tag realm-aedes-updater:latest zencoder76/realm-aedes-updater
+docker tag realm-aedes-broker:latest zencoder76/realm-aedes-updater
 docker push zencoder76/realm-aedes-updater
+docker tag realm-aedes-broker:latest zencoder76/realm-aedes-updater:v0.1.0-armv7
+docker push zencoder76/realm-aedes-updater:v0.1.0-armv7
 ```   
-   
-Additionally, you can add a version tag:   
-   
-```shell   
-docker tag realm-aedes-broker:latest zencoder76/realm-aedes-broker:v0.1.0-armv7
-docker push zencoder76/realm-aedes-broker:v0.1.0-armv7
-```   
+
    
 If you have the SenseHat build and push the client   
    
@@ -327,6 +330,8 @@ docker buildx build -t realm-aedes-sensehat-client . --platform linux/arm/v7
 docker images
 docker tag realm-aedes-sensehat-client:latest zencoder76/realm-aedes-sensehat-client
 docker push zencoder76/realm-aedes-sensehat-client
+docker tag realm-aedes-sensehat-client:latest zencoder76/realm-aedes-sensehat-client:v0.1.0-armv7
+docker push zencoder76/realm-aedes-sensehat-client:v0.1.0-armv7
 ```
    
 
