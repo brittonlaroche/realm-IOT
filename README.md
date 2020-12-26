@@ -181,8 +181,12 @@ You can also run the wifi outage script and see that it will store and retry the
 ### Install the Realm MQTT Broker and middleware   
    
 Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
-Perform a gitclone or download the zip file
-
+Perform a gitclone by running the shell command below or download the zip file.
+   
+```shell
+git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
+```   
+   
 ### Import the realm application with the realm-cli on your laptop
 
 Note these realm-cli steps must be perofrmed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
@@ -322,7 +326,14 @@ docker push zencoder76/realm-aedes-sensehat-client:v0.1.0-armv7
 ```
    
 ### Prepare the PI
-With the OS installed, the next step would be to install Docker. Open up a terminal on your Raspberry PI and run the below commands
+Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
+Perform a gitclone by running the shell command below or download the zip file.
+   
+```shell
+git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
+```   
+   
+With the OS installed and bitbucket git cloned, the next step would be to install Docker. Open up a terminal on your Raspberry PI and run the below commands
 ```
 sudo apt-get update && sudo apt-get upgrade
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -369,9 +380,16 @@ docker.io/zencoder76/realm-aedes-updater:latest
 Repeat the process for the broker and client images.
 
 ### Setting up the containers on the RPI
-Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The service have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration   
+Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The service have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration.  The setup configuration is under the same directory where the bitbucked git clone was installed.
    
+```shell
+cd [your git clone dir]/aedes-realm/setup/configuration
+```   
+   
+
 ```
+vi broker.env 
+   
 # Realm app info
 REALM_APP_ID=
 REALM_EMAIL=
