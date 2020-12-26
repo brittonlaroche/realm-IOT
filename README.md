@@ -368,7 +368,27 @@ docker.io/zencoder76/realm-aedes-updater:latest
 ```
 Repeat the process for the broker and client images.
 
-
+### Setting up the containers on the RPI
+Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The service have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration   
+   
+```
+# Realm app info
+REALM_APP_ID=
+REALM_EMAIL=
+REALM_PASSWORD=
+```   
+   
+These .env files also have a few additional configurable parameters you can tweak as needed.   
+   
+You can now spin up the services using the below scripts.   
+   
+```shell
+./1-docker-setup-network
+./2-docker-setup-updater v0.1.0-armv7
+./3-docker-setup-broker v0.1.2-armv7
+./4-docker-setup-sensehat-client v0.1.0-armv7
+```
+All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.
 
 ## Creating a Python MQTT client  
    
