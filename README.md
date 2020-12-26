@@ -369,85 +369,11 @@ docker.io/zencoder76/realm-aedes-updater:latest
 Repeat the process for the broker and client images.
 
 
-### Configure the broker to connect to your Realm application
-Edit the realm.js file under the broker source utils directory.   
+
+## Creating a Python MQTT client  
    
-```
-/IOT/sensor/broker/src/utils $ vi realm.js
-```
-
-    
-Change the new app function to include the app_id of your realm application.   
+We may not choose to use the SenseHat prebuilt node libraries for a variety of reasons.  Many of the MQTT forums are asking for a generic python client. We have decided to create one here to use the Realm MQTT Broker. This allows for a varierty of sensors and diffrent form factors not included in the SenseHat.   
    
-```js
-'use strict';
-
-const Realm = require('realm');
-
-exports.app = new Realm.App('your-realm-app-id');
-
-exports.loginEmailPassword = async (email, password) => {
-  const credentials = Realm.Credentials.emailPassword(email, password);
-  return this.app.logIn(credentials).catch((error) => {
-    console.log(error);
-    return false;
-  });
-};
-```   
-
-Now we will do the same to the realm middleware as well, we will replace the 'your-realm-app-id' portion with the realm app you created.  We will update the middleware realm.js file in the following directory:   
-   
-```
-~/IOT/sensor/middleware/aedes-emitter-realm $ vi realm.js
-```
-
-
-```js
-'use strict'
-
-const Realm = require('realm')
-
-const app = new Realm.App('your-realm-app-id')
-
-exports.app = app
-
-exports.loginEmailPassword = async (email, password) => {
-  const credentials = Realm.Credentials.emailPassword(email, password)
-  try {
-    const user = await app.logIn(credentials)
-    if (user.id !== app.currentUser.id) {
-      throw new Error('Current user invalid')
-    }
-    return user
-  } catch (err) {
-    console.error('Failed to log in', err)
-    return false
-  }
-}
-```   
-   
-Now lets edit the username and password for the email user we created.  There are two ways to set the password, the proper way is to set up environment variables.  In order to create a quick test we can comment out the use of environment variables and hardcode the userename and password in the index.js.     
-   
-```
-~/IOT/sensor/broker/src $ vi index.js
-```
-   
-```js
-const main = async () => {
-/*  const user = await utils.realm.loginEmailPassword(
-    process.env.AEDES_REALM_EMAIL,
-    process.env.AEDES_REALM_PASSWORD
-  );
-*/
-
-const user = await utils.realm.loginEmailPassword(
-    'mqtt@pi.com',
-    'Passw0rd'
-  );
-```
-
-## Creating a Python MQTT client
-
 We begin by installing the python libraries for paho-mqtt on the raspberry pi. We do this by running the following from the command line:   
    
 ```
