@@ -332,8 +332,41 @@ sudo sh get-docker.sh
 Add a non-root user to the Docker group
 ```
 sudo usermod -aG docker pi
-```
+```   
+   
+Login to docker  
+   
+```shell
+pi@raspberrypi:~ $ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: zencoder76
+Password:
+WARNING! Your password will be stored unencrypted in /home/pi/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
+Login Succeeded
+```   
+   
+Pull the docker images we just created.    
+   
+```shell
+pi@raspberrypi:~ $ docker pull zencoder76/realm-aedes-updater
+\Using default tag: latest
+latest: Pulling from zencoder76/realm-aedes-updater
+71728559ce1f: Pull complete
+ac621a7031da: Pull complete
+c80cb094ef96: Pull complete
+64bdfe3d9810: Pull complete
+0fe7aa12a8c5: Pull complete
+a14935c29500: Pull complete
+7ae38e22e69e: Pull complete
+060ccc365748: Pull complete
+Digest: sha256:de92068c176fdddffe1381543666eb8765686bc37a92e3360e5814c23d66957b
+Status: Downloaded newer image for zencoder76/realm-aedes-updater:latest
+docker.io/zencoder76/realm-aedes-updater:latest
+```
+Repeat the process for the broker and client images.
 
 
 ### Configure the broker to connect to your Realm application
