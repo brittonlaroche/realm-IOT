@@ -183,19 +183,6 @@ You can also run the wifi outage script and see that it will store and retry the
 Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
 Perform a gitclone or download the zip file
 
-### Prepare the PI
-With the OS installed, the next step would be to install Docker. Open up a terminal on your Raspberry PI and run the below commands
-```
-sudo apt-get update && sudo apt-get upgrade
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-   
-Add a non-root user to the Docker group
-```
-sudo usermod -aG docker pi
-```
-
 ### Import the realm application with the realm-cli on your laptop
 
 Note these realm-cli steps must be perofrmed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
@@ -334,6 +321,18 @@ docker tag realm-aedes-sensehat-client:latest zencoder76/realm-aedes-sensehat-cl
 docker push zencoder76/realm-aedes-sensehat-client:v0.1.0-armv7
 ```
    
+### Prepare the PI
+With the OS installed, the next step would be to install Docker. Open up a terminal on your Raspberry PI and run the below commands
+```
+sudo apt-get update && sudo apt-get upgrade
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+   
+Add a non-root user to the Docker group
+```
+sudo usermod -aG docker pi
+```
 
 
 
