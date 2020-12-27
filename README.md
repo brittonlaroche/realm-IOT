@@ -5,7 +5,7 @@ MongoDB Realm sync is a poewerful tool that has now been brought to the world of
 
 
 ## Hands On Lab
-In this "hands on lab" we will create our own full featured IOT sensor device that will send data from a remote IOT device to MongoDB Atlas. After setting up our Raspberry pi and wiring inthe DHT11 temperature and humidity sensor, we will begin with a simple python script that sends data directly to MongoDB via a REST API webhook.  We will then enhance this simple code to retry sending its data in the event of a local network outage. Finally, we will upgrade our simple script to talk to an MQTT Broker which will send data to the Realm Middleware which will guarantee delivery and bi-directional communication with MongoDB Atlas. The MQTT broker and Realm Middleware opens a whole new world of possibilities where configuration changes and upgrades can be passed down to remote IOT devices rather than a one way sending of sensor data from the IOT device.   
+In this "hands on lab" we will create our own full featured IOT sensor device that will send data from a remote IOT device to MongoDB Atlas. After setting up our Raspberry pi and wiring inthe DHT11 temperature and humidity sensor, we will begin with a simple python script that sends data directly to MongoDB via2-docker-setup-broker.sh a REST API webhook.  We will then enhance this simple code to retry sending its data in the event of a local network outage. Finally, we will upgrade our simple script to talk to an MQTT Broker which will send data to the Realm Middleware which will guarantee delivery and bi-directional communication with MongoDB Atlas. The MQTT broker and Realm Middleware opens a whole new world of possibilities where configuration changes and upgrades can be passed down to remote IOT devices rather than a one way sending of sensor data from the IOT device.   
    
 ![Realm IOT MQTT](./img/RealmIOT-V4-5.png) 
 
@@ -435,7 +435,7 @@ You can verify your containers are running by issuing the following command:
 docker ps -a
 ```
 
-You can learn how to start and stop containers on the PI by watching this videp [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
+You can learn how to start and stop containers on the PI by watching this video [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
 
 if you get an error like the following:  
 ```
