@@ -411,7 +411,7 @@ chmod 755 *
 ./3-docker-setup-broker.sh v0.1.2-armv7
 ./4-docker-setup-sensehat-client.sh v0.1.0-armv7
 ```
-All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.  For our example we don't need the tags.  You may need to change out the docker name from wekancode123 to your docker username.  The 3-docker-setup-broker.sh is provided as an example below.
+All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.  For our example we don't need the tags.  You may need to change out the docker name from wekancode123 to your docker username (mine is zencoder76).  The 3-docker-setup-broker.sh is provided as an example below.
 
 ```shell
 #!/bin/bash
@@ -447,7 +447,7 @@ Make sure you include the "--privileged" flag to the 2-docker-setup-broker.sh sc
 Additionally you can connect to the container in interactive mode:
    
 ```shell
-docker exec -i -t broker /bin/bash
+docker exec -it broker /bin/bash
 ```   
 
 ## Creating a Python MQTT client  
