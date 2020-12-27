@@ -398,15 +398,36 @@ REALM_PASSWORD=
    
 These .env files also have a few additional configurable parameters you can tweak as needed.   
    
-You can now spin up the services using the below scripts.   
+You can now spin up the services using the below scripts.  
+
+```shell
+cd [your git clone dir]/aedes-realm/setup
+chmod 755 *
+```
    
 ```shell
-./1-docker-setup-network
-./2-docker-setup-updater v0.1.0-armv7
-./3-docker-setup-broker v0.1.2-armv7
-./4-docker-setup-sensehat-client v0.1.0-armv7
+./1-docker-setup-network.sh
+./2-docker-setup-updater.sh v0.1.0-armv7
+./3-docker-setup-broker.sh v0.1.2-armv7
+./4-docker-setup-sensehat-client.sh v0.1.0-armv7
 ```
-All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.
+All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.  For our example we don't need the tags.  You may need to change out the docker name from wekancode123 to your docker username.  The 3-docker-setup-broker.sh is provided as an example below.
+
+```shell
+#!/bin/bash
+set -x #echo on
+docker run \
+  --restart unless-stopped \
+  --device /dev/fb0 \
+  --device /dev/fb1 \
+  --publish 1883:1883 \
+  --publish 3000:3000 \
+  --env-file ./configuration/broker.env \
+  --network realm-aedes-net \
+  --detach \
+  --name broker zencoder76/realm-aedes-broker:$1
+```
+
 
 ## Creating a Python MQTT client  
    
