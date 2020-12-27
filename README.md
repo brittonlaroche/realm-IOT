@@ -429,10 +429,11 @@ docker run \
   --name broker zencoder76/realm-aedes-broker
 ```
 
-You can verify your containers are running by issuing the following command:
+You can verify your containers are running by issuing the following commands:
 
 ```shell
 docker ps -a
+docker container ls -a
 ```
 
 You can learn how to start and stop containers on the PI by watching this video [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
@@ -443,6 +444,11 @@ docker: Error response from daemon: error gathering device information while add
 ```   
 Make sure you include the "--privileged" flag to the 2-docker-setup-broker.sh script as the container needs access to the PI's devices.
 
+Additionally you can connect to the container in interactive mode:
+   
+```shell
+docker exec -i -t broker /bin/bash
+```   
 
 ## Creating a Python MQTT client  
    
