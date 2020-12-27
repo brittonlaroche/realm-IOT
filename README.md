@@ -425,7 +425,7 @@ docker run \
   --env-file ./configuration/broker.env \
   --network realm-aedes-net \
   --detach \
-  --name broker zencoder76/realm-aedes-broker:$1
+  --name broker zencoder76/realm-aedes-broker
 ```
 
 
