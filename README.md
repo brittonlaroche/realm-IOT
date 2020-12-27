@@ -434,6 +434,8 @@ You can verify your containers are running by issuing the following command:
 docker ps -a
 ```
 
+You can learn how to start and stop containers on the PI by watching this videp [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
+
 ## Creating a Python MQTT client  
    
 We may not choose to use the SenseHat prebuilt node libraries for a variety of reasons.  Many of the MQTT forums are asking for a generic python client. We have decided to create one here to use the Realm MQTT Broker. This allows for a varierty of sensors and diffrent form factors not included in the SenseHat.   
