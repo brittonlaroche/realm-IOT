@@ -450,6 +450,8 @@ Additionally you can connect to the container in interactive mode:
 docker exec -it broker /bin/bash
 ```   
 
+If you need help debugging a crashed docker container, take a look at this article [here](https://medium.com/@pimterry/5-ways-to-debug-an-exploding-docker-container-4f729e2c0aa8)
+
 ## Creating a Python MQTT client  
    
 We may not choose to use the SenseHat prebuilt node libraries for a variety of reasons.  Many of the MQTT forums are asking for a generic python client. We have decided to create one here to use the Realm MQTT Broker. This allows for a varierty of sensors and diffrent form factors not included in the SenseHat.   
