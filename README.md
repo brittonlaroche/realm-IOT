@@ -269,6 +269,7 @@ The next step is to setup [qemu-user-static](https://github.com/multiarch/qemu-u
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 ```
 
+
 This lets you build arm images on your system.
 
 The docker build scripts found under each service lets you quickly build the image and push it to Dockerhub. You'll need to login with your Dockerhub credentials before you can push the images. These scripts also take in a tag for the image as an input
@@ -284,6 +285,7 @@ Start with building the realm mqtt broker.
     
 ```shell
 cd [your install directory]/aedes-realm/broker
+npm install
 docker buildx build -t realm-aedes-broker . --platform linux/arm/v7
 
 docker images
@@ -302,6 +304,7 @@ Build and push the updater
    
 ```shell
 cd [your install directory]/aedes-realm/updater
+npm install
 docker buildx build -t realm-aedes-updater . --platform linux/arm/v7
 
 docker images
@@ -316,6 +319,7 @@ If you have the SenseHat build and push the client
    
 ```shell
 cd [your install directory]/aedes-realm/clients/sensehat
+npm install
 docker buildx build -t realm-aedes-sensehat-client . --platform linux/arm/v7
 
 docker images
@@ -380,7 +384,7 @@ docker.io/zencoder76/realm-aedes-updater:latest
 Repeat the process for the broker and client images.
 
 ### Setting up the containers on the RPI
-Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The service have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration.  The setup configuration is under the same directory where the bitbucked git clone was installed.
+Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The services have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration.  The setup configuration is under the same directory where the bitbucked git clone was installed.
    
 ```shell
 cd [your git clone dir]/aedes-realm/setup/configuration
