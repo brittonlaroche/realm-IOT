@@ -417,6 +417,7 @@ All but the setup network script take in tags as arguments. These are used to pu
 #!/bin/bash
 set -x #echo on
 docker run \
+  --privileged \
   --restart unless-stopped \
   --device /dev/fb0 \
   --device /dev/fb1 \
@@ -435,6 +436,13 @@ docker ps -a
 ```
 
 You can learn how to start and stop containers on the PI by watching this videp [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
+
+if you get an error like the following:  
+```
+docker: Error response from daemon: error gathering device information while adding custom device "/dev/fb1": no such file or directory
+```   
+Make sure you include the "--privileged" flag to the 2-docker-setup-broker.sh script as the container needs access to the PI's devices.
+
 
 ## Creating a Python MQTT client  
    
