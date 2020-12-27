@@ -428,6 +428,11 @@ docker run \
   --name broker zencoder76/realm-aedes-broker
 ```
 
+You can verify your containers are running by issuing the following command:
+
+```shell
+docker ps -a
+```
 
 ## Creating a Python MQTT client  
    
