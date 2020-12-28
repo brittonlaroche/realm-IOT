@@ -277,15 +277,14 @@ The docker build scripts found under each service lets you quickly build the ima
 
 ```shell
 cd [your install directory]/aedes-realm/broker
-./docker-build-armv7.sh v0.1.2-armv7
+./docker-build-armv7.sh v0.1.0-armv7
 ```   
    
-or if auto push is not enabled on your system you can manually build and push your files.    
+If auto push is not enabled on your system you can manually build and push your files.    
 Start with building the realm mqtt broker.   
     
 ```shell
 cd [your install directory]/aedes-realm/broker
-npm install
 docker buildx build -t realm-aedes-broker . --platform linux/arm/v7
 
 docker images
@@ -304,7 +303,6 @@ Build and push the updater
    
 ```shell
 cd [your install directory]/aedes-realm/updater
-npm install
 docker buildx build -t realm-aedes-updater . --platform linux/arm/v7
 
 docker images
@@ -319,7 +317,6 @@ If you have the SenseHat build and push the client
    
 ```shell
 cd [your install directory]/aedes-realm/clients/sensehat
-npm install
 docker buildx build -t realm-aedes-sensehat-client . --platform linux/arm/v7
 
 docker images
@@ -465,5 +462,34 @@ We begin by installing the python libraries for paho-mqtt on the raspberry pi. W
 ```
 sudo pip install paho-mqtt
 ```
+
+You can use the nano editor on the PI to create the following python publisher: mqtt-pub.py
+
+```phython
+# A simple example for an MQTT Publisher
+
+import paho.mqtt.client as paho
+import sys
+import datetime
+
+client = paho.Client()
+
+# Python is host, port, timeout in seconds
+if client.connect("localhost",1883,10) != 0:
+    print("Could not connect to MQTT Broker")
+    sys.exit(-1)
+
+now = int(datetime.datetime.utcnow().timestamp())
+print("now: "+ str(now))
+message = "{\"sensorType\":\"temperature\",\"sensorId\":\"af4ff76b-009b-4cc4-8dfe-c058d1d030c9\",\"tempCelsius\":26.66,\"tempFahrenheit\":80.00,\"timestamp\":" + str(now) +"}"
+
+print(message)
+
+# topic, message, quality of service.
+client.publish("dht/temperature", message)
+
+# Disconnect
+client.disconnect()
+```   
 
 
