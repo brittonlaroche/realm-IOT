@@ -462,9 +462,16 @@ We begin by installing the python libraries for paho-mqtt on the raspberry pi. W
 ```
 sudo pip install paho-mqtt
 ```
+All of the python scripts used in this git hub are located here:   
+https://github.com/brittonlaroche/realm-IOT/blob/main/python/   
+    
+You can use the nano editor on the PI to create the following python MQTT publisher: mqtt-pub.py
+```shell
+nano mqtt-pub.py
+```    
 
-You can use the nano editor on the PI to create the following python publisher: mqtt-pub.py
-
+copy and paste the code below:  
+   
 ```phython
 # A simple example for an MQTT Publisher
 
@@ -491,5 +498,46 @@ client.publish("dht/temperature", message)
 # Disconnect
 client.disconnect()
 ```   
+   
+You can use the nano editor on the PI to create the following python MQTT subcriber: mqtt-sub.py   
+   
+```shell
+nano mqtt-sub.py
+```       
+   
+Copy and paste the code below   
+   
+```python
+# A simple example for an MQTT Subscriber
 
+import paho.mqtt.client as paho
+import sys
+import datetime
+
+def onMessage(client, userdata, msg):
+    print(msg.topic + ": " + msg.payload.decode())
+
+client = paho.Client()
+client.on_message = onMessage
+
+# The way we do it in node.js
+# const client = mqtt.connect('mqtt://localhost:9000');
+
+# Python is host, port, timeout in seconds
+if client.connect("localhost",1883,10) != 0:
+    print("Could not connect to MQTT Broker")
+    sys.exit(-1)
+
+client.subscribe("dht/temperature")
+
+try:
+    print("Press CTLRL+C to exit...")
+    client.loop_forever()
+except:
+    print("Disconnecting from broker")
+
+
+# Disconnect
+client.disconnect()
+```
 
