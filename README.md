@@ -430,28 +430,36 @@ docker run \
   --name broker zencoder76/realm-aedes-broker
 ```
 
+if you get an error like the following:  
+```
+docker: Error response from daemon: error gathering device information while adding custom device "/dev/fb1": no such file or directory
+```   
+Make sure you include the "--privileged" flag to the 2-docker-setup-broker.sh script as the container needs access to the PI's devices.   
+    
 You can verify your containers are running by issuing the following commands:
 
 ```shell
 docker ps -a
 docker container ls -a
+   
 ```
-
-You can learn how to start and stop containers on the PI by watching this video [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
-
-if you get an error like the following:  
-```
-docker: Error response from daemon: error gathering device information while adding custom device "/dev/fb1": no such file or directory
+You can see the log files with the following commands:
+   
+```shell
+pi@raspberrypi:~ $ docker ps -a
+CONTAINER ID   IMAGE                           COMMAND                  CREATED        STATUS        PORTS                                            NAMES
+654d9af79045   zencoder76/realm-aedes-broker   "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:1883->1883/tcp, 0.0.0.0:3000->3000/tcp   broker
+pi@raspberrypi:~ $ docker logs 654d9af79045
 ```   
-Make sure you include the "--privileged" flag to the 2-docker-setup-broker.sh script as the container needs access to the PI's devices.
-
+   
 Additionally you can connect to the container in interactive mode:
    
 ```shell
 docker exec -it broker /bin/bash
 ```   
 
-If you need help debugging a crashed docker container, take a look at this article [here](https://medium.com/@pimterry/5-ways-to-debug-an-exploding-docker-container-4f729e2c0aa8)
+You can learn how to start and stop containers on the PI by watching this video [here](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/) If you need help debugging a crashed docker container, take a look at this article [here](https://medium.com/@pimterry/5-ways-to-debug-an-exploding-docker-container-4f729e2c0aa8)
+
 
 ## Creating a Python MQTT client  
    
