@@ -479,7 +479,7 @@ You can use the nano editor on the PI to create the following python MQTT client
 nano mqtt-client.py
 ```       
    
-Copy and paste the code below   
+Copy and paste the code below (beware the html tabs and spaces in github may mess with python) raw code here: [mqtt-client.py](https://raw.githubusercontent.com/brittonlaroche/realm-IOT/main/python/mqtt-client.py)
    
 ```python
 import Adafruit_DHT
