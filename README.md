@@ -473,79 +473,52 @@ sudo pip install paho-mqtt
 All of the python scripts used in this git hub are located here:   
 https://github.com/brittonlaroche/realm-IOT/blob/main/python/   
     
-You can use the nano editor on the PI to create the following python MQTT publisher: mqtt-pub.py
-```shell
-nano mqtt-pub.py
-```    
-
-copy and paste the code below:  
-   
-```phython
-# A simple example for an MQTT Publisher
-
-import paho.mqtt.client as paho
-import sys
-import datetime
-
-client = paho.Client()
-
-# Python is host, port, timeout in seconds
-if client.connect("localhost",1883,10) != 0:
-    print("Could not connect to MQTT Broker")
-    sys.exit(-1)
-
-now = int(datetime.datetime.utcnow().timestamp())
-print("now: "+ str(now))
-message = "{\"sensorType\":\"temperature\",\"sensorId\":\"af4ff76b-009b-4cc4-8dfe-c058d1d030c9\",\"tempCelsius\":26.66,\"tempFahrenheit\":80.00,\"timestamp\":" + str(now) +"}"
-
-print(message)
-
-# topic, message, quality of service.
-client.publish("dht/temperature", message)
-
-# Disconnect
-client.disconnect()
-```   
-   
-You can use the nano editor on the PI to create the following python MQTT subcriber: mqtt-sub.py   
+You can use the nano editor on the PI to create the following python MQTT client: mqtt-client.py   
    
 ```shell
-nano mqtt-sub.py
+nano mqtt-client.py
 ```       
    
 Copy and paste the code below   
    
 ```python
-# A simple example for an MQTT Subscriber
-
+import Adafruit_DHT
+import time
+import requests
+import datetime
 import paho.mqtt.client as paho
 import sys
-import datetime
+DHT_SENSOR = Adafruit_DHT.DHT11
+DHT_PIN = 4
 
-def onMessage(client, userdata, msg):
-    print(msg.topic + ": " + msg.payload.decode())
 
 client = paho.Client()
-client.on_message = onMessage
-
-# The way we do it in node.js
-# const client = mqtt.connect('mqtt://localhost:9000');
 
 # Python is host, port, timeout in seconds
 if client.connect("localhost",1883,10) != 0:
     print("Could not connect to MQTT Broker")
     sys.exit(-1)
 
-client.subscribe("dht/temperature")
-
-try:
-    print("Press CTLRL+C to exit...")
-    client.loop_forever()
-except:
-    print("Disconnecting from broker")
-
-
-# Disconnect
-client.disconnect()
-```
-
+while True:
+    humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+    if humidity is not None and temperature is not None:
+        sensorDate = datetime.datetime.now()
+        ftemp = (temperature * 9/5)+32
+        #data = "{\"sensorId\":\"T89176\", \"temperature\":" +str(ftemp) +", \"humidity\":" + str(humidity) +", \"sensorDate\":\"" + str(sensorDate) + "\"}"
+        now = int(datetime.datetime.utcnow().timestamp())
+        message = "{\"sensorType\":\"temperature\",\"sensorId\":\"af4ff76b-009b-4cc4-8dfe-c058d1d030c9\",\"tempCelsius\":"+ str(temperature) +",\"tempFahrenheit\":"+ str(ftemp) +",\"timestamp\":" + str(now) +"}"
+        print(message)
+        client.publish("dht/temperature", message)
+    else:
+        print("Sensor failure. Check wiring.")
+    time.sleep(3)
+ ```
+ 
+    
+After starting the mqtt broker you can start the mqtt python client with the following command:   
+   
+```shell
+python3 mqtt-client.py
+```   
+   
+Also worth noting, there is a simple [mqtt-pub.py](https://github.com/brittonlaroche/realm-IOT/blob/main/python/mqtt-pub.py) and [mqtt-sub.py](https://github.com/brittonlaroche/realm-IOT/blob/main/python/mqtt-sub.py) script that you can install and use for easy testing of the realm mqtt broker.
