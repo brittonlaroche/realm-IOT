@@ -93,7 +93,33 @@ sudo python3 -m pip install --upgrade pip setuptools wheel
 
 ### First Version
 
-Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call.
+Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call. If you hve not doens so already, create an Atlas Cluster and a Realm Application.  Inside the realm application create a thrid party service and ad a webhook with the following function:
+   
+```js
+// This function is the webhook's request handler.
+exports = async function(payload) {
+  /*===============================================================
+  - Date:       Author:           Version:        Notes:
+  -----------------------------------------------------------------
+  - 2020-11-11  Britton LaRoche   1.0            Initial Release
+  -
+  ===============================================================*/
+    // Data can be extracted from the request as follows:
+    console.log(JSON.stringify("IOT-WH called ... executing..." ));
+    var iotData = context.services.get("mongodb-atlas").db("InventoryDemo").collection("IOT_DATA");
+    var body = {};
+    var result = {};
+    if (payload.body) {
+      console.log(JSON.stringify(payload.body));
+      body = EJSON.parse(payload.body.text());
+      console.log(JSON.stringify(body));
+      result = iotData.insertMany(body);
+      console.log(JSON.stringify("return document" ));
+      console.log(JSON.stringify(result));
+    }
+    return  result; 
+};
+```
 
 ![Realm IOT](./img/RealmIOT.png) 
 
