@@ -256,7 +256,7 @@ Done.
 Successfully imported 'realm-mqtt-icbmx'
 ```
 
-#### Add an Edge device to the Edges collection in the iot_refernce database
+#### Add an Edge device to the Edges collection in the iot_reference database
 Open the atlas collection browser to the iot-refrence database and insert the following edge device entry into the edges collection:   
 
 ```
