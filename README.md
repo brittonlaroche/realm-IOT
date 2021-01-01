@@ -256,6 +256,41 @@ Done.
 Successfully imported 'realm-mqtt-icbmx'
 ```
 
+#### Add an Edge device to the Edges collection in the iot_refernce database
+Open the atlas collection browser to the iot-refrence database and insert the following edge device entry into the edges collection:   
+
+```
+{
+	"_id" : ObjectId("5fcd91f4a32cf1f25490059d"),
+	"edgeId" : "4fef2031-5e39-43c9-9a20-3517019b9ce9",
+	"compactSize" : 100,
+	"edgeName" : "Home Edge",
+	"updateDay" : 0,
+	"updateTime" : "10:05:44",
+	"sensors" : [
+		{
+			"sensorType" : "temperature",
+			"isConfigured" : false,
+			"_id" : ObjectId("5fcd9205333a5e319c94453a"),
+			"sensorName" : "Living Room Temperature Sensor",
+			"threshold" : "0",
+			"sensorId" : "af4ff76b-009b-4cc4-8dfe-c058d1d030c9"
+		},
+		{
+			"sensorName" : "Living Room Humidity Sensor",
+			"threshold" : "0",
+			"sensorId" : "a27179de-fae5-4b58-ad8f-d839ae755c9b",
+			"sensorType" : "humidity",
+			"isConfigured" : false,
+			"_id" : ObjectId("5fc4cca74d700e0829fc9b74")
+		}
+	],
+	"updateImageName" : null,
+	"lastUpdateDt" : ISODate("2020-12-28T07:30:00.716Z"),
+	"partitionKey" : null
+}
+```
+
 ### Build the docker images on your laptop
 Docker's new buildx is used to build the images. The newer versions of docker (19.03+) have buildx bundled together but you may need to enable it to actually build images. This [link](https://docs.docker.com/buildx/working-with-buildx/) shows you how to enable buildx.
 
