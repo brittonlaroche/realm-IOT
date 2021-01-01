@@ -93,7 +93,11 @@ sudo python3 -m pip install --upgrade pip setuptools wheel
 
 ### First Version
 
-Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call. If you hve not doens so already, create an Atlas Cluster and a Realm Application.  Inside the realm application create a thrid party service and ad a webhook with the following function:
+Our first version of the code uses the Realm Serverless capability to create a webhook to receive the sensor data directly from the IOT device using nothing more thana REST API call. 
+   
+![Realm IOT](./img/RealmIOT.png)    
+   
+If you have not done so already, create an Atlas Cluster and a Realm Application.  Inside the realm application create a third party HTTP service and add a webhook with the following function:   
    
 ```js
 // This function is the webhook's request handler.
@@ -121,7 +125,7 @@ exports = async function(payload) {
 };
 ```
 
-![Realm IOT](./img/RealmIOT.png) 
+Next we create a python script to run on the Raspberry PI.  Use the vi or nano editor and create a readTemp.py file.  Cut and paste the following code into the readTemp.py file, save the file and then execute it.
 
 ```py
 import Adafruit_DHT
@@ -149,6 +153,12 @@ while True:
         print("Sensor failure. Check wiring.");
     time.sleep(3);   
 ```   
+
+Execute the file with the following command:
+
+```shell
+python3 readTemp.py
+```
 
 if you get the error: "cannot import name 'Beaglebone_Black_Driver' from 'Adafruit_DHT'" then the following instructions will show how to add the proper entry for the DHT settings.
 
