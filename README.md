@@ -4,7 +4,7 @@
 MongoDB Realm sync is a poewerful tool that has now been brought to the world of IOT usecases.  In this example we use a DHT11 sensor and a Raspbery Pi to send temperature and humidity data from a delivery truck as part of solution to a cold chain logistics problem.
 |Video|    
 |---------------------------|   
-|[Click here to watch a 7 Minute Video on what you will create](youtu.be/exK1K9MT5L4)|   
+|[Click here to watch a 12 Minute Video on what you will create](youtu.be/exK1K9MT5L4)|   
 |<a href="https://youtu.be/exK1K9MT5L4" target="video"><img src="./img/Realm-IOT-MQTT-Demo.png" width="600px"></a>|   
 
 
