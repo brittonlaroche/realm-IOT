@@ -1,7 +1,7 @@
 # Realm IOT
 
 ## Overview
-MongoDB Realm sync is a powerful tool that has now been brought to the world of IOT usecases.  In this example we use a DHT11 sensor and a Raspbery Pi to send temperature and humidity data from a delivery truck as part of solution to a cold chain logistics problem.
+MongoDB Realm sync is a powerful tool that has now been brought to the world of IOT use cases.  In this example we use a DHT11 sensor and a Raspberry Pi to send temperature and humidity data from a delivery truck as part of a solution to a cold chain logistics problem.
 
 |Video|    
 |---------------------------|   
@@ -18,7 +18,7 @@ In this "hands on lab" we will create our own full featured IOT sensor device th
 ## Getting Started
 
 ### Purchase IOT Equipment
-You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiring.  For a little extra you can get a whole kit with multiple sensors a bread board and all the wiring you will need with the purchase of an Elegoo UNO R3 Starter Kit.  I selected the Pi 4 with 4GB, this githib has instructions for the Pi 4 with this configuration.  The details are in the Amazon links provided in the table below.
+You will need a Raspberry Pi 4 and a DHT11 Temperature sensor along with some wiring.  For a little extra you can get a whole kit with multiple sensors, a bread board and all the wiring you will need with the purchase of an Elegoo UNO R3 Starter Kit.  I selected the Pi 4 with 4GB, this github has instructions for the Pi 4 with this configuration.  The details are in the Amazon links provided in the table below.
 
 | Raspberry Pi Cana Kit | Elegoo UNO Starter Kit |  SenseHat |
 |-----------------------|------------------------|-----------|
@@ -27,20 +27,20 @@ You will need a Rasbery Pi 4 and a DHT11 Temperature sensor along with some wiri
 
 ### Configure the IOT Hardware
 
-#### <img src="./img/1.svg" width="32px"> Rasperry Pi Cana Kit Installation Guide
-When you first get the cana kit and the Raspbery Pi you will want to set it up.  You need to install the operating system and get the latest updates. I found that the rasbian operating system was pre-installed on the sd card and all I had to do was insert the card and perform an update. Watch the video below for step by step instructions.
+#### <img src="./img/1.svg" width="32px"> Raspberry Pi Cana Kit Installation Guide
+When you first get the cana kit and the Raspberry Pi you will want to set it up.  You need to install the operating system and get the latest updates. I found that the raspbian operating system was pre-installed on the sd card and all I had to do was insert the card and perform an update. Watch the video below for step by step instructions.
 |Getting Started Video|Getting Started Blog & Video|
 |--------------|---------------|
-|[Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)|[Instructions: Setting up the Rasperry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)|
+|[Video: Setting up the Raspberry Pi 4](https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be)|[Instructions: Setting up the Raspberry Pi4](https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/)|
 |<a href="https://www.youtube.com/watch?v=BpJCAafw2qE&feature=youtu.be" target="video"><img src="./img/CTVideo.png"></a>|<a href="https://crosstalksolutions.com/getting-started-with-raspberry-pi-4/" target="blog"><img src="./img/CTBlog.png"></a>|
 
-After assempling the Raspberry Pi cana Kit, insert the SD card, plug in a monitor, mouse and keyboard and power it on.  Once inside the rasbian operating system open the terminal window and run the following command:   
+After assembling the Raspberry Pi cana Kit, insert the SD card, plug in a monitor, mouse and keyboard and power it on.  Once inside the raspbian operating system open the terminal window and run the following command:   
    
 ```   
 sudo apt-get update && sudo apt-get upgrade -y
 ```   
 
-It will take serveral minutes to apply all the updates.
+It will take several minutes to apply all the updates.
    
 #### <img src="./img/2.svg" width="32px"> Wiring the DHT11 Sensor to the Raspberry Pi
 Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sensor and take 3 female to female wiring connections. 
@@ -49,9 +49,9 @@ Open the ELEGOO UNO Project Super Starter Kit with UNO R3 and find the DHT11 sen
 |<img src="./img/DHT11-Sensor.jpg">|
 
 
-The DHT11 temperature sensor needs to be connected to the Rasperry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video: [DHT11 Raspery Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
+The DHT11 temperature sensor needs to be connected to the Raspberry PI GPIO pin out array.  To get an idea of what to do if this is your first time watch the following video: [DHT11 Raspberry Pi Configurtaion](https://www.youtube.com/watch?v=GsG1OClojOk&feature=youtu.be) 
 
-We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry Pi.  To get a listing of your specific Rasperry pi and its GPIO pin configuration you can type "pinout" from the pi terminal.  You will get a beatifully colored ASCII art map like the following:
+We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry Pi.  To get a listing of your specific Raspberry pi and its GPIO pin configuration you can type "pinout" from the pi terminal.  You will get a beautifully colored ASCII art map like the following:
 
 |PI Board|GPIO Pins|
 |-------------|------------------|
@@ -61,13 +61,13 @@ We will need to connect the DHT11 sensor to the right GPIO pins on the Raspberry
 |-------------------------|
 |<img src="./img/DHT11Wiring.png">|
 
-We are not going to use the bread board.  Instead we will wire the DHT11 sensor directly to the Raspbery Pi GPIO board using the female to female conector wires we took from the ELEGOO UNO Project Super Starter Kit as seen below:
+We are not going to use the breadboard.  Instead we will wire the DHT11 sensor directly to the Raspberry Pi GPIO board using the female to female connector wires we took from the ELEGOO UNO Project Super Starter Kit as seen below:
 
 |Pi with Cana Kit Open | Pi with Cana Kit Closed|
 |----------------------|------------------------|
 |<a href="./img/PIKitOpenLarge.jpg" target="large"><img src="./img/PIKitOpen.jpg"></a>|<img src="./img/PIKitLid.jpg">|
 
-The exact wiring for my particluar set up allowed me to include the Cana kit fan.  My wiring is as follows:
+The exact wiring for my particular set up allowed me to include the Cana kit fan.  My wiring is as follows:
 |DHT11 Pin| Wire Color|Raspberry Pi GPIO Pin| Pin Number|
 |---------|---------|---------|---------|
 |[Left] Data Pin| Orange| GPIO4 | (7)|
@@ -175,7 +175,7 @@ elif match.group(1) == 'BCM2711':
     return 3
 ```
 
-It works!  But there are many problems with this code.  There is no error handling, so if the network goes down the code throws an error and stops working on the IOT device.  You have to connect to the IOT device to start again.  Even if there was error handleing there would be data loss for the entire time the network is down.
+It works!  But there are many problems with this code.  There is no error handling, so if the network goes down the code throws an error and stops working on the IOT device.  You have to connect to the IOT device to start again.  Even if there was error handling there would be data loss for the entire time the network is down.
 
 The network outage can be tested with the following code:   
    
@@ -198,12 +198,12 @@ print("wifi back up")
 
 
 ## Second Version
-A second version of this code that handles errors and has built in retry logic is here.  It also batches the data.  If the sensor data is collected every 3 seconds then with a batch of 20 you can send data once a minute and still maintain the granualarity of each 3 second reading.   
+A second version of this code that handles errors and has built in retry logic is here.  It also batches the data.  If the sensor data is collected every 3 seconds then with a batch of 20 you can send data once a minute and still maintain the granularity of each 3 second reading.   
 
 You can access the second version of the code here.   
 https://github.com/brittonlaroche/realm-IOT/blob/main/python/readTempBatch.py
 
-You can also run the wifi outage script and see that it will store and retry the data.  This is all well and good.  But it is severly lacking as it is only one way communication.  Imagine trying to change the configuration.  Maybe you have an upgrade or maybe you want to save money and batch the data so it sends once every five minutes.  Perhaps you want the sensor to only read once a minute.  How will you apply these changes?  Imagine going to thousands of devices to make the necessary upgrades. This solution is untenable in the long run and will quickly become a maintenance nightmare. Enter the next phase of our lab.  We will now enable an MQTT broker and the Realm Sync capabilities.
+You can also run the wifi outage script and see that it will store and retry the data.  This is all well and good.  But it is severely lacking as it is only one way communication.  Imagine trying to change the configuration.  Maybe you have an upgrade or maybe you want to save money and batch the data so it sends once every five minutes.  Perhaps you want the sensor to only read once a minute.  How will you apply these changes?  Imagine going to thousands of devices to make the necessary upgrades. This solution is untenable in the long run and will quickly become a maintenance nightmare. Enter the next phase of our lab.  We will now enable an MQTT broker and the Realm Sync capabilities.
 
 ## Realm IOT MQTT
 ![Realm IOT MQTT](./img/RealmIOT-V5.png) 
@@ -214,7 +214,7 @@ You can also run the wifi outage script and see that it will store and retry the
 
 | Node.js | MQTT Broker | MQTT Client| Docker |
 |---------|-------------|------------|--------|
-|<a href="https://www.youtube.com/watch?v=TlB_eWDSMt4" target="video"><img src="./img/nodejs-icon.svg"  width="200px">Intro Video</a>   <a href="https://codewithmosh.com/p/the-complete-node-js-course" target="video"><img src="./img/node-master.png" width="200px">   Complete Course</a>|<a href="https://www.youtube.com/watch?v=eS4nx6tLSLs" target="video"><img src="./img/mqtt.png" width="256px">   What is MQTT?</a>   <a href="https://www.youtube.com/watch?v=WmKAWOVnwjE" target="video"><img src="./img/mqtt-broker.png" width="256px">   MQTT Broker</a>|<a href="https://www.youtube.com/watch?v=c_DPKujOmGw" target="video"><img src="./img/sensorClient2.png" width="256px">   Short Client Video</a>   <a href="https://youtu.be/QAaXNt0oqSI" target="video"><img src="./img/tempSensorClient.png" width="256px">   Detailed Client Video</a>|<a href="https://youtu.be/ASNL27a7sE4" target="video"><img src="./img/dockerHub256.png" width="256px">   Short Docker Video</a>   <a href="https://www.youtube.com/watch?v=fqMOX6JJhGo" target="video"><img src="./img/docker-icon_copy.png" width="256px">   Complete Docker Course</a>|The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4) A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)| If you are not familiar with MQTT here is a great getting started videos: [What is MQTT?](https://www.youtube.com/watch?v=eS4nx6tLSLs) [What is the MQTT Broker?](https://www.youtube.com/watch?v=WmKAWOVnwjE)  | In our example we are using python libraries to read the sensor data and node.js to run the MQTT Broker and realm Middleware.  The simpliest solution is to create a python MQTT client.  Short videos here:[MQTT Clients in Python with the paho-mqtt module](https://www.youtube.com/watch?v=c_DPKujOmGw) and here: [How to Use the Paho Python MQTT Client- (Beginners Guide)](https://youtu.be/QAaXNt0oqSI) |  The basic introduction to docker is here [Docker Hub Introduction Tutorial](https://youtu.be/ASNL27a7sE4) |
+|<a href="https://www.youtube.com/watch?v=TlB_eWDSMt4" target="video"><img src="./img/nodejs-icon.svg"  width="200px">Intro Video</a>   <a href="https://codewithmosh.com/p/the-complete-node-js-course" target="video"><img src="./img/node-master.png" width="200px">   Complete Course</a>|<a href="https://www.youtube.com/watch?v=eS4nx6tLSLs" target="video"><img src="./img/mqtt.png" width="256px">   What is MQTT?</a>   <a href="https://www.youtube.com/watch?v=WmKAWOVnwjE" target="video"><img src="./img/mqtt-broker.png" width="256px">   MQTT Broker</a>|<a href="https://www.youtube.com/watch?v=c_DPKujOmGw" target="video"><img src="./img/sensorClient2.png" width="256px">   Short Client Video</a>   <a href="https://youtu.be/QAaXNt0oqSI" target="video"><img src="./img/tempSensorClient.png" width="256px">   Detailed Client Video</a>|<a href="https://youtu.be/ASNL27a7sE4" target="video"><img src="./img/dockerHub256.png" width="256px">   Short Docker Video</a>   <a href="https://www.youtube.com/watch?v=fqMOX6JJhGo" target="video"><img src="./img/docker-icon_copy.png" width="256px">   Complete Docker Course</a>|The Realm MQTT framework runs on node.js.  If you are not familiar with node.js then I recommend the following video to learn the basics: [Node.js Tutorial for Beginners: Learn Node in 1 Hour](https://www.youtube.com/watch?v=TlB_eWDSMt4) A full course with RESTful APIs with Node, Express, and MongoDB is here: [The Complete Node.js Course](https://codewithmosh.com/p/the-complete-node-js-course)| If you are not familiar with MQTT here is a great getting started videos: [What is MQTT?](https://www.youtube.com/watch?v=eS4nx6tLSLs) [What is the MQTT Broker?](https://www.youtube.com/watch?v=WmKAWOVnwjE)  | In our example we are using python libraries to read the sensor data and node.js to run the MQTT Broker and realm Middleware.  The simplest solution is to create a python MQTT client.  Short videos here:[MQTT Clients in Python with the paho-mqtt module](https://www.youtube.com/watch?v=c_DPKujOmGw) and here: [How to Use the Paho Python MQTT Client- (Beginners Guide)](https://youtu.be/QAaXNt0oqSI) |  The basic introduction to docker is here [Docker Hub Introduction Tutorial](https://youtu.be/ASNL27a7sE4) |
 
 
 
@@ -231,7 +231,7 @@ git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
    
 ### Import the realm application with the realm-cli on your laptop
 
-Note these realm-cli steps must be perofrmed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
+Note these realm-cli steps must be performed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
    
    
 https://docs.mongodb.com/realm/deploy/realm-cli-reference#import-an-application    
@@ -274,7 +274,7 @@ Navigate back to the realm application directory
 cd [your install directory]/aedes-realm/realm-app-configuration
 ```
    
-Example below (Dont worry, the real API key was not pasted. It is an example)   
+Example below (Don't worry, the real API key was not pasted. It is an example)   
    
 ```
 realm-cli login  --api-key=bwpbsexy --private-api-key=c53f6baf-f7b5-41fe-b56f-2ac1ba244b19
@@ -299,7 +299,7 @@ Successfully imported 'realm-mqtt-icbmx'
 ```
 
 #### Add an Edge device to the Edges collection in the iot_reference database
-Open the atlas collection browser to the iot-refrence database and insert the following edge device entry into the edges collection:   
+Open the atlas collection browser to the iot-reference database and insert the following edge device entry into the edges collection:   
 
 ```
 {
@@ -349,7 +349,7 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
 This lets you build arm images on your system.
 
-The docker build scripts found under each service lets you quickly build the image and push it to Dockerhub. You'll need to login with your Dockerhub credentials before you can push the images. These scripts also take in a tag for the image as an input
+The docker build scripts found under each service lets you quickly build the image and push it to Dockerhub. You'll need to login with your Docker Hub credentials before you can push the images. These scripts also take in a tag for the image as an input
 
 
 ```shell
@@ -405,7 +405,7 @@ docker push zencoder76/realm-aedes-sensehat-client:v0.1.0-armv7
    
 ### Prepare the PI
 Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
-Perform a gitclone by running the shell command below or download the zip file.
+Perform a git clone by running the shell command below or download the zip file.
    
 ```shell
 git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
@@ -458,7 +458,7 @@ docker.io/zencoder76/realm-aedes-updater:latest
 Repeat the process for the broker and client images.
 
 ### Setting up the containers on the RPI
-Once the images are up on Dockerhub, you can get started on setting up the services on the edge. The services have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration.  The setup configuration is under the same directory where the bitbucked git clone was installed.
+Once the images are up on Docker Hub, you can get started on setting up the services on the edge. The services have a few configurable parameters than need to be passed in as environment variables to the container. In particular, the Realm app information needs to be updated in broker.env and updater.env found under ./setup/configuration.  The setup configuration is under the same directory where the bitbucket git clone was installed.
    
 ```shell
 cd [your git clone dir]/aedes-realm/setup/configuration
@@ -540,7 +540,7 @@ You can learn how to start and stop containers on the PI by watching this video 
 
 ## Creating a Python MQTT client  
    
-We may not choose to use the SenseHat prebuilt node libraries for a variety of reasons.  Many of the MQTT forums are asking for a generic python client. We have decided to create one here to use the Realm MQTT Broker. This allows for a varierty of sensors and diffrent form factors not included in the SenseHat.   
+We may not choose to use the SenseHat prebuilt node libraries for a variety of reasons.  Many of the MQTT forums are asking for a generic python client. We have decided to create one here to use the Realm MQTT Broker. This allows for a variety of sensors and different form factors not included in the SenseHat.   
    
 We begin by installing the python libraries for paho-mqtt on the raspberry pi. We do this by running the following from the command line:   
    
@@ -599,3 +599,5 @@ python3 mqtt-client.py
 ```   
    
 Also worth noting, there is a simple [mqtt-pub.py](https://github.com/brittonlaroche/realm-IOT/blob/main/python/mqtt-pub.py) and [mqtt-sub.py](https://github.com/brittonlaroche/realm-IOT/blob/main/python/mqtt-sub.py) script that you can install and use for easy testing of the realm mqtt broker.
+
+
