@@ -6,7 +6,7 @@ MongoDB Realm sync is a powerful tool that has now been brought to the world of 
 |Video|    
 |---------------------------|   
 |[Click here to watch a 12 Minute Video on what you will create](https://youtu.be/exK1K9MT5L4)|   
-|<a href="https://youtu.be/exK1K9MT5L4" target="video"><img src="./img/Realm-IOT-MQTT-Demo.png" width="600px"></a>|   
+|<a href="https://youtu.be/exK1K9MT5L4" target="video"><img src="./img/Realm-IOT-MQTT-Demo.png" width="1080px"></a>|   
 
 
 
