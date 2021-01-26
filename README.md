@@ -103,7 +103,7 @@ Our first version of the code uses the Realm Serverless capability to create a w
    
 ![Realm IOT](./img/RealmIOT.png)    
    
-If you have not done so already, create an [Atlas Cluster](https://cloud.mongodb.com) and a [Realm Application](https://docs.mongodb.com/realm/procedures/create-realm-app/).  Inside the realm application [create a third party HTTP service](https://docs.mongodb.com/realm/services).  A step by step guide on creating a cluster, a realm application and webhook is provided in [this github](https://docs.mongodb.com/realm/services)    
+If you have not done so already, create an [Atlas Cluster](https://cloud.mongodb.com) and a [Realm Application](https://docs.mongodb.com/realm/procedures/create-realm-app/).  Inside the realm application [create a third party HTTP service](https://docs.mongodb.com/realm/services).  A step by step guide on creating a cluster, a realm application and webhook is provided in [this github](https://github.com/brittonlaroche/realm-tensorflow#-create-an-atlas-cluster)    
    
 Once you have created the 3rd party HTTP service add a webhook with the following function:   
    
