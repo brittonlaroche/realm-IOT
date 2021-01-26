@@ -103,7 +103,7 @@ Our first version of the code uses the Realm Serverless capability to create a w
    
 ![Realm IOT](./img/RealmIOT.png)    
    
-If you have not done so already, create an Atlas Cluster and a Realm Application.  Inside the realm application create a third party HTTP service and add a webhook with the following function:   
+If you have not done so already, create an [Atlas Cluster](https://cloud.mongodb.com) and a [Realm Application](https://docs.mongodb.com/realm/procedures/create-realm-app/).  Inside the realm application [create a third party HTTP service](https://docs.mongodb.com/realm/services) and add a webhook with the following function:   
    
 ```js
 // This function is the webhook's request handler.
