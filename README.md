@@ -227,10 +227,18 @@ You can also run the wifi outage script and see that it will store and retry the
 Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
 Perform a gitclone by running the shell command below or download the zip file.
    
-```shell
+Bitbucket code base: https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/     
+    
+Example login below:
+   
+```shell 
 git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
 ```   
-   
+
+Note: if you do not have access you can use my old code base here:
+
+
+
 ### Import the realm application with the realm-cli on your laptop
 
 Note these realm-cli steps must be performed on your laptop / desktop. The realm-cli is 64 bit and will not run on the PI's 32 bit operating system.   
