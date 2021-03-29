@@ -235,9 +235,8 @@ Example login below:
 git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
 ```   
 
-Note: if you do not have access you can use my old code base here:
-
-
+Note: if you do not have access you can use my old code base here (not recommended as this is a really old version of beta code):   
+https://github.com/brittonlaroche/realm-IOT/blob/main/bitbucket/aedes-realm.zip
 
 ### Import the realm application with the realm-cli on your laptop
 
