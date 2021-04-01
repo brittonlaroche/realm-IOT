@@ -207,6 +207,13 @@ https://github.com/brittonlaroche/realm-IOT/blob/main/python/readTempBatch.py
 
 You can also run the wifi outage script and see that it will store and retry the data.  This is all well and good.  But it is severely lacking as it is only one way communication.  Imagine trying to change the configuration.  Maybe you have an upgrade or maybe you want to save money and batch the data so it sends once every five minutes.  Perhaps you want the sensor to only read once a minute.  How will you apply these changes?  Imagine going to thousands of devices to make the necessary upgrades. This solution is untenable in the long run and will quickly become a maintenance nightmare. Enter the next phase of our lab.  We will now enable an MQTT broker and the Realm Sync capabilities.
 
+## Android Studio Code for mobile integration
+You can download a copy of the realm demo with the temperature field added to the mobile device here:   
+https://github.com/brittonlaroche/realm-IOT/blob/main/bitbucket/inventory-system%202.zip   
+   
+For detailed instructions on how to run the emulator see the following github link:   
+https://github.com/brittonlaroche/realm/tree/master/inventoryDemo#-set-up-the-mobile-development-environment
+
 ## Realm IOT MQTT
 ![Realm IOT MQTT](./img/RealmIOT-V5.png) 
 
