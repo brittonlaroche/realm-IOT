@@ -531,9 +531,9 @@ chmod 755 *
    
 ```shell
 ./1-docker-setup-network.sh
-./2-docker-setup-updater.sh v0.1.0-armv7
-./3-docker-setup-broker.sh v0.1.2-armv7
-./4-docker-setup-sensehat-client.sh v0.1.0-armv7
+./2-docker-setup-broker.sh
+./3-docker-setup-updater.sh
+./4-docker-setup-sensehat-client.sh
 ```
 All but the setup network script take in tags as arguments. These are used to pull in specific images from Dockerhub.  For our example we don't need the tags.  You may need to change out the docker name from wekancode123 to your docker username (mine is zencoder76).  The 3-docker-setup-broker.sh is provided as an example below.
 
