@@ -490,6 +490,36 @@ REALM_EMAIL=
 REALM_PASSWORD=
 ```   
    
+Here is a sample broker.env file:   
+```
+pi@raspberrypi:~/iot2/aedes-realm/setup/configuration $ cat broker.env
+# Unique identifier for an edge broker
+# Used to get the configuration for edge and sensors
+# connecting to it
+EDGE_ID=4fef2031-5e39-43c9-9a20-3517019b9ce9
+
+# Realm app info
+REALM_APP_ID=realm-mqtt-icpxf
+REALM_EMAIL=pi@mqtt.com
+REALM_PASSWORD=MyPassword
+
+# Message sync interval
+# Messages are held in memory for this duration
+# before they are bulk written into realm.
+# Defined in seconds
+MESSAGE_SYNC_INTERVAL=5
+
+# Compaction frequency
+# Defined in minutes
+COMPACTION_INTERVAL=30
+
+# Updater
+# Base url
+UPDATE_BASE_URL=http://updater:9000
+# Update check interval
+# Defined in minutes
+UPDATE_CHECK_INTERVAL=30
+```
 These .env files also have a few additional configurable parameters you can tweak as needed.   
    
 You can now spin up the services using the below scripts.  
