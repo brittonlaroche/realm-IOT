@@ -231,10 +231,10 @@ https://github.com/brittonlaroche/realm/tree/master/inventoryDemo#-set-up-the-mo
 
 ### Install the Realm MQTT Broker and middleware   
    
-Note: This section requires the realm mqtt libraries which will be found [here](https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/) in the near future.   
+Note: This section requires the realm mqtt libraries which will be found [here](https://github.com/WekanCompany/mongodb-iot-realm) in the near future.   
 Perform a gitclone by running the shell command below or download the zip file.
    
-Bitbucket code base: https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/     
+Old Bitbucket code base: https://bitbucket.org/We-Kan-Code/aedes-realm/src/master/     
     
 Example login below:
    
@@ -244,6 +244,10 @@ git clone https://brittonlaroche@bitbucket.org/We-Kan-Code/aedes-realm.git
 
 Note: if you do not have access you can use my old code base here (not recommended as this is a really old version of beta code):   
 https://github.com/brittonlaroche/realm-IOT/blob/main/bitbucket/aedes-realm.zip
+
+
+Get the current (recommended) version here:
+https://github.com/WekanCompany/mongodb-iot-realm
 
 ### Import the realm application with the realm-cli on your laptop
 
